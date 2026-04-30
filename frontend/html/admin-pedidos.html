@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger - Admin Pedidos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/admin-pedidos.js" defer></script>
+</head>
+<body class="admin-body">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Burger Place</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="/" class="nav-item"><span class="icon">🏠</span> Início</a>
+            <a href="/admin" class="nav-item"><span class="icon">📊</span> Dashboard</a>
+            <a href="/admin/pedidos" class="nav-item active"><span class="icon">📦</span> Pedidos</a>
+            <a href="/admin/produtos" class="nav-item"><span class="icon">🍔</span> Produtos</a>
+            <a href="/admin/usuarios" class="nav-item"><span class="icon">👥</span> Usuários</a>
+        </nav>
+    </aside>
+    <main class="admin-main">
+        <section id="section-pedidos" class="admin-section">
+            <header class="admin-top-header">
+                <div class="header-content">
+                    <div>
+                        <h1>Gerenciamento de Pedidos</h1>
+                        <p class="text-muted">Visualize e gerencie todos os pedidos realizados pelos clientes.</p>
+                    </div>
+                </div>
+            </header>
+            <div class="table-container">
+                <table class="products-table-v2">
+                    <thead>
+                        <tr>
+                            <th>ID do Pedido</th>
+                            <th>Cliente</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                            <th>Total</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-tbody">
+                        <!-- Dynamic orders -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger - Login</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/components.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="auth-container">
+        <header id="main-header"></header>
+        <main class="auth-content">
+            <div class="auth-card">
+                <h1 class="title-center">Bem-vindo</h1>
+                <form class="auth-form" id="login-form">
+                    <input type="email" id="login-email" placeholder="E-mail" class="input-field" required>
+                    <input type="password" id="login-password" placeholder="Senha" class="input-field" required>
+                    <p style="font-size: 0.9rem; color: #6C757D;"><a href="#">Esqueceu a senha?</a></p>
+                    <button type="submit" class="btn-primary" id="login-btn">Entrar</button>
+                </form>
+                <div class="auth-footer-link" style="margin-top: 20px;">
+                    <p>Não tem uma conta? <a href="/cadastro">Cadastre-se</a></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer id="main-footer"></footer>
+    <script src="/js/login.js" defer></script>
+</body>
+</html>

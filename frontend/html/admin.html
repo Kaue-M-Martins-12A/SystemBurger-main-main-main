@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger - Admin</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/admin.js" defer></script>
+</head>
+<body class="admin-body">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Burger Place</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="/" class="nav-item"><span class="icon">🏠</span> Início</a>
+            <a href="/admin" class="nav-item active"><span class="icon">📊</span> Dashboard</a>
+            <a href="/admin/pedidos" class="nav-item"><span class="icon">📦</span> Pedidos</a>
+            <a href="/admin/produtos" class="nav-item"><span class="icon">🍔</span> Produtos</a>
+            <a href="/admin/usuarios" class="nav-item"><span class="icon">👥</span> Usuários</a>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        <section id="section-dashboard" class="admin-section">
+            <header class="admin-top-header">
+                <div class="header-content">
+                    <div>
+                        <h1>Dashboard Geral</h1>
+                        <p class="text-muted">Visão geral dos principais indicadores de desempenho (KPIs).</p>
+                    </div>
+                    <div class="header-filters">
+                        <select id="range-selector" class="admin-select" onchange="Admin.fetchDashboard(this.value)">
+                            <option value="week">Esta Semana (7 dias)</option>
+                            <option value="month">Este Mês (30 dias)</option>
+                            <option value="year">Este Ano (12 meses)</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <p>Vendas em Tempo Real</p>
+                    <h2 id="kpi-vendas">R$ 0,00</h2>
+                </div>
+                <div class="kpi-card">
+                    <p>Média de Pedidos</p>
+                    <h2 id="kpi-media">R$ 0,00</h2>
+                </div>
+                <div class="kpi-card">
+                    <p>Clientes Ativos</p>
+                    <h2 id="kpi-clientes">0</h2>
+                </div>
+                <div class="kpi-card">
+                    <p>Entregas em Andamento</p>
+                    <h2 id="kpi-entregas">0</h2>
+                </div>
+            </div>
+            
+            <div class="charts-area">
+                <div class="chart-row">
+                    <div class="chart-container main-chart">
+                        <div class="chart-header">
+                            <div style="display:flex; align-items:center; gap:10px;">
+                                <h3>Vendas por Período</h3>
+                                <span id="live-badge" class="live-badge">
+                                    <span class="live-dot"></span> LIVE
+                                </span>
+                            </div>
+                            <h2 id="kpi-vendas-totais">R$ 0,00</h2>
+                        </div>
+                        <div class="chart-canvas-wrap">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container side-chart">
+                        <h3>Itens Mais Vendidos</h3>
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="niche-area">
+                    <h3 style="margin-bottom: 20px;">Líderes por Categoria</h3>
+                    <div class="niche-grid" id="niche-grid">
+                        <!-- Categorias dinâmicas -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger - Home</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/index.css">
+  <script src="/js/auth.js" defer></script>
+  <script src="/js/cart.js" defer></script>
+  <script src="/js/product.js" defer></script>
+  <script src="/js/components.js" defer></script>
+</head>
+
+<body>
+  <header id="main-header"></header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Os melhores burgers da cidade</h1>
+        <p style="margin-bottom: 30px; font-size: 1.1rem;">Ingredientes frescos, receitas exclusivas e um sabor
+          inigualável. Experimente o melhor burger da sua vida.</p>
+        <a href="/cardapio" class="btn-primary" style="padding: 15px 40px;">Ver Cardápio</a>
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2 class="section-title">Mais Vendidos</h2>
+      <div class="product-grid">
+        <div class="product-card" data-id="1" data-price="25.00">
+          <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            alt="Burger Clássico" class="product-image">
+          <div class="product-info">
+            <h3 class="product-name">Burger Clássico</h3>
+            <p class="product-desc">O sabor tradicional que você adora.</p>
+          </div>
+        </div>
+        <div class="product-card" data-id="2" data-price="32.00">
+          <img
+            src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            alt="Burger Bacon" class="product-image">
+          <div class="product-info">
+            <h3 class="product-name">Burger Bacon</h3>
+            <p class="product-desc">Burger com bacon crocante e queijo derretido.</p>
+          </div>
+        </div>
+        <div class="product-card" data-id="3" data-price="22.00">
+          <img
+            src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            alt="Burger Chicken" class="product-image">
+          <div class="product-info">
+            <h3 class="product-name">Burger Chicken</h3>
+            <p class="product-desc">Burger de frango crocante com maionese especial.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="promocoes">
+      <h2 class="section-title">Promoções</h2>
+      <div class="promo-list">
+        <div class="promo-card">
+          <img
+            src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            alt="Combo Família" class="promo-image">
+          <div class="promo-info">
+            <h3 class="promo-title">Combo Família</h3>
+            <p class="promo-desc">2 Burgers + 2 Batatas + 2 Refrigerantes. Oferta especial por tempo limitado.</p>
+            <a href="/cardapio" class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">Ver Promoção</a>
+          </div>
+        </div>
+        <div class="promo-card">
+          <img
+            src="https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            alt="Desconto Estudante" class="promo-image">
+          <div class="promo-info">
+            <h3 class="promo-title">Desconto Estudante</h3>
+            <p class="promo-desc">15% de desconto em qualquer pedido para estudantes.</p>
+            <a href="/cardapio" class="btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">Ver Promoção</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="main-footer"></footer>
+</body>
+
+</html>

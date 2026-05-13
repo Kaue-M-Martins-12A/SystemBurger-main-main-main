@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger - Cadastro</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/components.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="auth-container">
+        <header id="main-header"></header>
+        <main class="auth-content">
+            <div class="auth-card">
+                <h1 class="title-center" style="font-size: 1.8rem;">Criar Minha Conta</h1>
+                <form class="auth-form" id="register-form">
+                    <div>
+                        <label class="input-label">Nome Completo</label>
+                        <input type="text" id="reg-name" placeholder="Seu nome completo" class="input-field" required>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <label class="input-label">Email</label>
+                        <input type="email" id="reg-email" placeholder="Seu melhor email" class="input-field" required>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <label class="input-label">Criar Senha</label>
+                        <input type="password" id="reg-password" placeholder="Mínimo 8 caracteres" class="input-field"
+                            required minlength="8">
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <label class="input-label">Confirmar Senha</label>
+                        <input type="password" id="reg-confirm" placeholder="Repita sua senha" class="input-field"
+                            required>
+                    </div>
+                    <button type="submit" class="btn-primary" id="reg-btn" style="margin-top: 25px;">Criar
+                        Conta</button>
+                </form>
+                <div class="auth-footer-link" style="margin-top: 20px;">
+                    <p>Já tem uma Conta? <a href="/login">Entre aqui</a></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer id="main-footer"></footer>
+    <script src="/js/cadastro.js" defer></script>
+</body>
+
+</html>

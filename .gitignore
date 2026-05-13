@@ -1,0 +1,7 @@
+node_modules/
+readme/
+README.md
+*.sqlite
+.env
+.DS_Store
+*.db

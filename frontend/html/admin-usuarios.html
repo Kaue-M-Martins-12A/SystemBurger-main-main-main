@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger - Admin Usuários</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/admin-usuarios.js" defer></script>
+</head>
+<body class="admin-body">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Burger Place</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="/" class="nav-item"><span class="icon">🏠</span> Início</a>
+            <a href="/admin" class="nav-item"><span class="icon">📊</span> Dashboard</a>
+            <a href="/admin/pedidos" class="nav-item"><span class="icon">📦</span> Pedidos</a>
+            <a href="/admin/produtos" class="nav-item"><span class="icon">🍔</span> Produtos</a>
+            <a href="/admin/usuarios" class="nav-item active"><span class="icon">👥</span> Usuários</a>
+        </nav>
+    </aside>
+    <main class="admin-main">
+        <section id="section-usuarios" class="admin-section">
+            <header class="admin-top-header">
+                <div class="header-content">
+                    <div>
+                        <h1>Gerenciar Usuários</h1>
+                        <p class="text-muted">Visualize as contas cadastradas na plataforma.</p>
+                    </div>
+                </div>
+            </header>
+            <div class="table-container">
+                <table class="products-table-v2">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-tbody">
+                        <!-- Dynamic users -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Modal Overlay para Detalhes de Usuário -->
+        <div id="user-overlay" class="modal-overlay">
+            <div class="modal-content" style="max-width: 800px;">
+                <div class="modal-header">
+                    <h2 id="u-title">Detalhes do Usuário</h2>
+                    <span class="close-modal" onclick="closeUserModal()">&times;</span>
+                </div>
+                <div style="display:flex; gap:30px; margin-bottom:20px;">
+                    <div style="flex:1; background:#f8f9fa; padding:20px; border-radius:12px;">
+                        <h3 style="margin-top:0;">Informações</h3>
+                        <p><strong>Nome:</strong> <span id="u-name"></span></p>
+                        <p><strong>Email:</strong> <span id="u-email"></span></p>
+                        <p><strong>Endereço:</strong> <span id="u-address"></span></p>
+                        <p><strong>Status:</strong> <span id="u-status"></span></p>
+                        <hr style="border:none; border-top:1px solid #ddd; margin:15px 0;">
+                        <button class="btn-primary" style="background:#dc3545; width:100%;" onclick="promptBlockUser()">Bloquear / Desbloquear Usuário</button>
+                    </div>
+                    <div style="flex:1; background:#f8f9fa; padding:20px; border-radius:12px;">
+                        <h3 style="margin-top:0;">Estatísticas</h3>
+                        <div>
+                            <h4>Mais Comprados</h4>
+                            <ul id="u-frequent" style="margin:0; padding-left:20px; font-size:0.9rem; color:#555;"></ul>
+                            <h4 style="margin-top:10px;">No Carrinho Atualmente</h4>
+                            <ul id="u-cart" style="margin:0; padding-left:20px; font-size:0.9rem; color:#555;"></ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Histórico de Compras</h3>
+                <div class="table-container" style="max-height:200px; overflow-y:auto; box-shadow:none; border:1px solid #eee;">
+                    <table class="products-table-v2">
+                        <thead style="position:sticky; top:0; background:#fafafa;">
+                            <tr><th>Pedido</th><th>Data</th><th>Status</th><th>Total</th></tr>
+                        </thead>
+                        <tbody id="u-history"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

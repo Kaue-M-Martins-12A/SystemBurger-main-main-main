@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger - Cardápio</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/cardapio.css">
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/cart.js" defer></script>
+    <script src="/js/product.js" defer></script>
+    <script src="/js/components.js" defer></script>
+    <script src="/js/cardapio.js" defer></script>
+</head>
+
+<body>
+    <header id="main-header"></header>
+
+    <main class="section container">
+        <h1 class="section-title" style="font-size: 2.2rem; margin-bottom: 40px;">Nosso cardápio</h1>
+
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="filterCategory('burgers', this)">Burgers</button>
+            <button class="tab-btn" onclick="filterCategory('acompanhamentos', this)">Acompanhamentos</button>
+            <button class="tab-btn" onclick="filterCategory('bebidas', this)">Bebidas</button>
+            <button class="tab-btn" onclick="filterCategory('sobremesas', this)">Sobremesas</button>
+        </div>
+
+        <div class="product-grid" id="menu-grid">
+            <!-- Products will be loaded here dynamically -->
+            <p style="grid-column: 1/-1; text-align: center; padding: 40px; color: #666;">Carregando cardápio...</p>
+        </div>
+    </main>
+
+    <footer id="main-footer"></footer>
+</body>
+
+</html>

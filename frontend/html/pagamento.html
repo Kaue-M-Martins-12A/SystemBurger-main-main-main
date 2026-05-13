@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger - Pagamento</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/pagamento.css">
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/cart.js" defer></script>
+    <script src="/js/components.js" defer></script>
+    <script src="/js/pagamento.js" defer></script>
+</head>
+
+<body>
+    <header id="main-header"></header>
+
+    <main class="checkout-container container">
+        <h1 class="section-title">Finalizar Pedido</h1>
+
+        <!-- Seção de Endereço -->
+        <div class="summary-section" style="border-bottom: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 style="font-size: 1.2rem; display: flex; align-items: center; gap: 10px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Endereço de Entrega
+                </h2>
+                <button type="button" class="btn-secondary" id="change-address-btn"
+                    style="padding: 5px 15px; font-size: 0.85rem;">Alterar</button>
+            </div>
+
+            <div id="address-display"
+                style="background: #f8f9fa; padding: 20px; border-radius: 12px; border: 1px dashed #ced4da;">
+                <p id="current-address" style="color: #495057; font-size: 0.95rem; line-height: 1.5;">Pesquisando seu
+                    endereço salvo...</p>
+                <div id="address-edit-form" style="display: none; margin-top: 15px;">
+                    <textarea id="temp-address-input" class="input-field"
+                        style="background: white; border: 1px solid #ddd; height: 80px; resize: none; margin-bottom: 10px;"
+                        placeholder="Digite o novo endereço..."></textarea>
+                    <button type="button" class="btn-primary" id="save-temp-address"
+                        style="padding: 8px 20px; font-size: 0.85rem;">Confirmar Endereço</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h2 style="font-size: 1.2rem; margin-bottom: 20px;">Resumo do pedido</h2>
+            <div id="checkout-items-list">
+                <!-- Dynamic items -->
+            </div>
+            <div class="summary-total">
+                <span>Total</span>
+                <span id="final-total-value">R$ 0,00</span>
+            </div>
+        </div>
+
+        <div>
+            <h2 style="font-size: 1.2rem; margin-bottom: 20px;">Método de pagamento</h2>
+            <div class="payment-methods">
+                <div class="method-option active" onclick="selectMethod('credit', this)">
+                    <div class="radio-circle"></div>
+                    <span>Cartão de crédito/débito</span>
+                </div>
+                <div class="method-option" onclick="selectMethod('pix', this)">
+                    <div class="radio-circle"></div>
+                    <span>PIX</span>
+                </div>
+                <div class="method-option" onclick="selectMethod('cash', this)">
+                    <div class="radio-circle"></div>
+                    <span>Dinheiro na entrega</span>
+                </div>
+            </div>
+
+            <form id="payment-form">
+                <div id="card-fields" class="card-form">
+                    <div class="input-group full-width">
+                        <label>Número do cartão</label>
+                        <input type="text" placeholder="1234 5678 9012 3456" class="input-field" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Data de validade</label>
+                        <input type="text" placeholder="MM/AA" class="input-field" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Código de segurança</label>
+                        <input type="text" placeholder="123" class="input-field" required>
+                    </div>
+                    <div class="input-group full-width">
+                        <label>Nome no cartão</label>
+                        <input type="text" placeholder="Nome completo" class="input-field" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary checkout-btn">Finalizar compra</button>
+            </form>
+        </div>
+    </main>
+    <footer id="main-footer"></footer>
+</body>
+
+</html>
